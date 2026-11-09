@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# Tech Mind Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React dashboard front end built with Material-UI. It currently contains the responsive top navigation bar (the app shell).
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Responsive app bar with a menu button, the "Tech Mind Dashboard" title and a search box
+- Mail and notification icons with badge counters
+- Profile menu (Profile, My account)
+- Mobile layout: the icons collapse into a single "more" menu on small screens
+- Accessible markup (ARIA labels on all icon buttons)
 
-### `yarn start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- [React](https://reactjs.org/) (bootstrapped with Create React App)
+- [Material-UI v4](https://v4.mui.com/) (`@material-ui/core`, `@material-ui/icons`)
+- Jest and React Testing Library for tests
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Project Structure
 
-### `yarn test`
+```
+src/
+├── App.js                  # Main component: responsive search app bar
+├── App.css / index.css     # Styles
+├── index.js                # App entry point
+├── components/
+│   ├── login.js            # Login page (placeholder, empty)
+│   └── register.js         # Registration page (placeholder, empty)
+├── App.test.js             # Default CRA test (needs updating)
+├── reportWebVitals.js
+└── setupTests.js
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `yarn build`
+This repository contains the `src` folder of a Create React App project. To run it:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+# 1. Create a CRA project (skip if you already have a package.json)
+npx create-react-app tech-mind-dashboard
+cd tech-mind-dashboard
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# 2. Install Material-UI v4
+npm install @material-ui/core@4 @material-ui/icons@4
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# 3. Replace the generated src/ folder with this repo's src/ folder, then:
+npm start
+```
 
-### `yarn eject`
+The app opens at http://localhost:3000.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Scripts
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+| Command         | Description                      |
+| --------------- | -------------------------------- |
+| `npm start`     | Run the app in development mode  |
+| `npm test`      | Run the tests                    |
+| `npm run build` | Create a production build        |
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Roadmap
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [ ] Build the login and registration forms (`components/login.js`, `components/register.js`)
+- [ ] Add routing (e.g. React Router) between pages
+- [ ] Make search, mail and notifications work with real data (counters are currently hard-coded)
+- [ ] Update `App.test.js`, which still checks for the default "learn react" text
+- [ ] Add a `package.json` and the `public/` folder to the repo
